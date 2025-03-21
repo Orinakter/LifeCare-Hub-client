@@ -1,6 +1,27 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
+  const navLink = (
+    <>
+      <NavLink>
+        <li>Home</li>
+      </NavLink>
+      <NavLink>
+        <li>Find Doctors</li>
+      </NavLink>
+      <NavLink>
+        <li>Book Appointment</li>
+      </NavLink>
+      <NavLink>
+        {" "}
+        <li>My Appointments</li>
+      </NavLink>
+      <NavLink>
+        <li>Medical Records</li>
+      </NavLink>
+    </>
+  );
   return (
     <div>
       <div className="navbar bg-blue-50 shadow-sm">
@@ -27,23 +48,13 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>Home</li>
-              <li>Find Doctors</li>
-              <li>Book Appointment</li>
-              <li>My Appointments</li>
-              <li>Medical Records</li>
+              {navLink}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl text-[#0D92F4]">LifeCare Hub</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex gap-4">
-            <li>Home</li>
-            <li>Find Doctors</li>
-            <li>Book Appointment</li>
-            <li>My Appointments</li>
-            <li>Medical Records</li>
-          </ul>
+          <ul className="menu menu-horizontal px-1 flex gap-4">{navLink}</ul>
         </div>
         <div className="navbar-end">
           <a className="btn bg-[#0D92F4] text-white">Login</a>
