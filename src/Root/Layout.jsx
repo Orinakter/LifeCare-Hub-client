@@ -14,7 +14,7 @@ const Layout = () => {
         <Routes>
           <Route path="/" element={<Home></Home>} />
           <Route path="/login" element={<Login></Login>} />
-          <Route path="/login" element={<Register></Register>} />
+          <Route path="/register" element={<Register></Register>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
