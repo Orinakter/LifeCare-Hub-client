@@ -5,6 +5,7 @@ import Navbar from "../Components/Shared/Navbar";
 import Footer from "../Components/Shared/Footer";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import FindDoctor from "../Pages/FindDoctor";
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
           <Route path="/" element={<Home></Home>} />
           <Route path="/login" element={<Login></Login>} />
           <Route path="/register" element={<Register></Register>} />
+          <Route path="/find-doctor" element={<FindDoctor></FindDoctor>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

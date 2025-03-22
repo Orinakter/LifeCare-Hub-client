@@ -4,10 +4,10 @@ import { Link, NavLink } from "react-router";
 const Navbar = () => {
   const navLink = (
     <>
-      <NavLink>
+      <NavLink to="/">
         <li>Home</li>
       </NavLink>
-      <NavLink>
+      <NavLink to="/find-doctor">
         <li>Find Doctors</li>
       </NavLink>
       <NavLink>

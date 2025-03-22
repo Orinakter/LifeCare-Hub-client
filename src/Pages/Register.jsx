@@ -1,5 +1,5 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+
 import registerLottiesData from '../assets/lotties/register.json'
 import { MdOutlineMail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
@@ -9,6 +9,8 @@ import { IoIosContact, IoIosPhotos } from 'react-icons/io';
 
 
 const Register = () => {
+  
+
     return (
         <div className='p-12'>
         <div className=" flex  items-center justify-center mt-12">
@@ -35,6 +37,7 @@ const Register = () => {
              type="text"
              placeholder="Enter your Name"
              name="name"
+
              className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
              required
            />
@@ -85,7 +88,7 @@ const Register = () => {
              required
            />
 
-           <label className="label text-xl">
+           <label className="label text-sm">
              <a
                href="#"
                className="label-text-alt link link-hover text-[#0D92F4]"
@@ -121,7 +124,7 @@ const Register = () => {
        </div>
        <p className="text-center text-sm  mt-4">
          Don't have an Account?
-         <Link to="/register">
+         <Link to="/login">
            <span className="text-[#0D92F4] hover:underline font-semibold">
              Login
            </span>

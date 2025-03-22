@@ -54,7 +54,7 @@ const Login = () => {
                   required
                 />
 
-                <label className="label text-xl">
+                <label className="label text-sm">
                   <a
                     href="#"
                     className="label-text-alt link link-hover text-[#0D92F4]"
