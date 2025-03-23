@@ -1,7 +1,17 @@
-import React from "react";
-import { Link, NavLink } from "react-router";
+import React, { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
+import { authContext } from "../../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const {user,logOut} = useContext(authContext)
+  const navigate = useNavigate()
+  const logOutHandler = async()=>{
+    await logOut()
+    navigate("/");
+    toast.success("logout Successfully")
+
+  }
   const navLink = (
     <>
       <NavLink to="/">
@@ -57,8 +67,17 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 flex gap-4">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">
-          <button className="btn bg-[#0D92F4] text-white">Login</button></Link>
+          {
+            user ?  <div className="">
+            <button 
+          onClick={logOutHandler}
+          className="btn bg-[#0D92F4] text-white">Logout</button>
+          </div> :<Link to="/login">
+            <button className="btn bg-[#0D92F4] text-white">Login</button>
+          </Link>
+          }
+          
+         
         </div>
       </div>
     </div>

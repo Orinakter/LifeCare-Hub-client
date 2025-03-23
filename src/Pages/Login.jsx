@@ -1,16 +1,34 @@
-import Lottie from 'lottie-react';
-import React from 'react';
-import loginLottieData from '../assets/lotties/login.json'
-import { MdOutlineMail } from 'react-icons/md';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
-
+import Lottie from "lottie-react";
+import React, { useContext, useState } from "react";
+import loginLottieData from "../assets/lotties/login.json";
+import { MdOutlineMail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { Link, useNavigate } from "react-router";
+import LoginWithGoogle from "../Components/LoginWithGoogle";
+import { authContext } from "../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    return (
-        <div className='p-12'>
-             <div className=" flex  items-center justify-center mt-12">
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage,setErrorMessage] = useState("");
+  const {loginUser} = useContext(authContext)
+  const navigate = useNavigate()
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+
+    await loginUser(email, password);
+    navigate("/");
+        toast.success("User login Successfully");
+
+  }
+   
+    
+
+  return (
+    <div className="p-12">
+      <div className=" flex  items-center justify-center mt-12">
         <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl flex flex-col lg:flex-row overflow-hidden">
           <div className="lg:w-1/2 p-10">
             <h2 className="text-2xl text-[#0D92F4] text-center font-bold mb-4">
@@ -22,7 +40,7 @@ const Login = () => {
             <h2 className="text-3xl font-bold mb-3 text-[#0D92F4] text-center">
               Log In your Account
             </h2>
-            <form>
+            <form onSubmit={loginHandler}>
               <div className="form-control mt-2">
                 <label className="flex justify-start items-center gap-2 mb-3 mt-4">
                   <span className="text-xl text-[#0D92F4]">
@@ -33,7 +51,8 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
@@ -49,7 +68,8 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="Enter your password"
-                  name="password"
+                  value={password}
+                  onChange={(e) =>setPassword(e.target.value)}
                   className="input input-bordered w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#126e82]"
                   required
                 />
@@ -70,24 +90,13 @@ const Login = () => {
                 </button>
               </div>
             </form>
-
-            <div class="flex items-center my-6">
-              <hr class="flex-grow border-gray-300" />
-              <span class="px-4 text-gray-500 text-sm">Or, Login with</span>
-              <hr class="flex-grow border-gray-300" />
+            <div className="form-control mt-6">
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+              </div>
+            <div className="">
+              <LoginWithGoogle></LoginWithGoogle>
             </div>
 
-            <div className="text-center flex items-center gap-3">
-              <button
-                
-                className="btn w-full bg-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition duration-300"
-              >
-                <span className="text-2xl">
-                  <FcGoogle />
-                </span>
-                Login with Google
-              </button>
-            </div>
             <p className="text-center text-sm  mt-4">
               Don't have an Account?
               <Link to="/register">
@@ -99,9 +108,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-  </div>
-
-    );
+    </div>
+  );
 };
 
 export default Login;
