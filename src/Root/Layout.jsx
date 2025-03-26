@@ -6,6 +6,7 @@ import Footer from "../Components/Shared/Footer";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import FindDoctor from "../Pages/FindDoctor";
+import AddDoctorForm from "../Pages/AddDoctorForm";
 
 const Layout = () => {
   return (
@@ -17,6 +18,7 @@ const Layout = () => {
           <Route path="/login" element={<Login></Login>} />
           <Route path="/register" element={<Register></Register>} />
           <Route path="/find-doctor" element={<FindDoctor></FindDoctor>} />
+          <Route path="/add-doctor" element={<AddDoctorForm></AddDoctorForm>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
