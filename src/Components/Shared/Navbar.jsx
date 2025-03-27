@@ -4,35 +4,35 @@ import { authContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const {user,logOut} = useContext(authContext)
-  const navigate = useNavigate()
-  const logOutHandler = async()=>{
-    await logOut()
+  const { user, logOut } = useContext(authContext);
+  const navigate = useNavigate();
+  const logOutHandler = async () => {
+    await logOut();
     navigate("/");
-    toast.success("logout Successfully")
-
-  }
+    toast.success("logout Successfully");
+  };
   const navLink = (
     <>
       <NavLink to="/">
         <li>Home</li>
       </NavLink>
       <NavLink to="/find-doctor">
-        <li>Find Doctors</li>
+        <li>All Doctors</li>
       </NavLink>
       <NavLink>
         <li>Book Appointment</li>
       </NavLink>
-      <NavLink to="dashboard">
-        {" "}
-        <li>Dashboard</li>
-      </NavLink>
+
       <NavLink>
         {" "}
         <li>My Appointments</li>
       </NavLink>
       <NavLink>
         <li>Medical Records</li>
+      </NavLink>
+      <NavLink to="dashboard">
+        {" "}
+        <li>Dashboard</li>
       </NavLink>
     </>
   );
@@ -71,17 +71,20 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 flex gap-4">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          {
-            user ?  <div className="">
-            <button 
-          onClick={logOutHandler}
-          className="btn bg-[#0D92F4] text-white">Logout</button>
-          </div> :<Link to="/login">
-            <button className="btn bg-[#0D92F4] text-white">Login</button>
-          </Link>
-          }
-          
-         
+          {user ? (
+            <div className="">
+              <button
+                onClick={logOutHandler}
+                className="btn bg-[#0D92F4] text-white"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn bg-[#0D92F4] text-white">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

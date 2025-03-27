@@ -8,6 +8,7 @@ import Register from "../Pages/Register";
 import FindDoctor from "../Pages/FindDoctor";
 import AddDoctorForm from "../Pages/AddDoctorForm";
 import Dashboard from "../Dashboard/Dashboard";
+import ViewDetails from "../Pages/ViewDetails";
 
 const Layout = () => {
   return (
@@ -19,6 +20,7 @@ const Layout = () => {
           <Route path="/login" element={<Login></Login>} />
           <Route path="/register" element={<Register></Register>} />
           <Route path="/find-doctor" element={<FindDoctor></FindDoctor>} />
+          <Route path="/view-details/:id" element={<ViewDetails></ViewDetails>} />
 
           <Route path="dashboard" element={<Dashboard></Dashboard>}>
             <Route
