@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 
 const ViewDetails = () => {
     const [details,setDetails] = useState({})
@@ -46,7 +46,9 @@ const ViewDetails = () => {
           </p>
       </div>
       <div className="mt-6">
+    <Link to="/book-appointment">
     <button className='btn bg-[#0D92F4] text-white'>Book Appointment</button>
+    </Link>
   </div>
   </div>
   
