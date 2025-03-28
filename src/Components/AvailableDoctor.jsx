@@ -25,9 +25,11 @@ const AvailableDoctor = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 rounded-xl">
             {
                 doctor.map(item=>(
-                    <div key={item.id} className=" flex flex-col border-2 border-gray-100 p-12">
+                    <div key={item.id} className=" flex flex-col border-2 border-gray-100 p-6 group">
                         <div className="flex-1">
-                        <img src={item?.image} alt="" className='w-[300px] h-[250px] object-cover rounded-xl' />
+                        <div className="overflow-hidden rounded-xl">
+                        <img src={item?.image} alt="" className='w-[300px] h-[250px] object-cover rounded-xl group-hover:scale-110 duration-500' />
+                        </div>
                         <h2 className="mt-4"><span className='font-semibold'>Name:</span> {item?.doctorName}</h2>
                         <p className=""><span className='font-semibold'>Specialization:</span>  {item?.specialization}</p>
                         <p className=""><span className='font-semibold'>Experience:</span> {item?.experience}</p>

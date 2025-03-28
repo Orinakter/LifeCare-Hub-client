@@ -10,6 +10,7 @@ import AddDoctorForm from "../Pages/AddDoctorForm";
 import Dashboard from "../Dashboard/Dashboard";
 import ViewDetails from "../Pages/ViewDetails";
 import BookAppointment from "../Pages/BookAppointment";
+import MyAppointments from "../Pages/MyAppointments";
 
 const Layout = () => {
   return (
@@ -23,6 +24,7 @@ const Layout = () => {
           <Route path="/find-doctor" element={<FindDoctor></FindDoctor>} />
           <Route path="/view-details/:id" element={<ViewDetails></ViewDetails>} />
           <Route path="/book-appointment" element={<BookAppointment></BookAppointment>} />
+          <Route path="/my-appointments" element={<MyAppointments></MyAppointments>} />
 
 
           <Route path="dashboard" element={<Dashboard></Dashboard>}>

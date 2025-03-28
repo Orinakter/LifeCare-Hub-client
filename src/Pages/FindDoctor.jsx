@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 
 const AvailableDoctor = () => {
@@ -38,9 +39,9 @@ const AvailableDoctor = () => {
                         </div>
 
                         <div className="flex justify-center items-center mt-8">
-                           {/* <Link to={`/contact-us/${item?.id}`}> */}
-                           <button className='btn bg-[#0D92F4] text-white'>View Details</button>
-                           {/* </Link> */}
+                           <Link to={`/view-details/${item?._id}`}>
+                           <button className='btn bg-[#0D92F4] text-white'>Doctor Details</button>
+                           </Link>
                         </div>
 
                     </div>

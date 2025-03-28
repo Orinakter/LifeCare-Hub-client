@@ -29,7 +29,7 @@ const AddDoctorForm = () => {
       rating,
       image,
     };
-    console.log(doctorInfo);
+    
 
     const res = await axios.post(`http://localhost:5000/doctor`,doctorInfo );
     console.log(res.data);

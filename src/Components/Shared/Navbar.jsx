@@ -23,7 +23,7 @@ const Navbar = () => {
         <li>Book Appointment</li>
       </NavLink>
 
-      <NavLink>
+      <NavLink to="/my-appointments"> 
         {" "}
         <li>My Appointments</li>
       </NavLink>
