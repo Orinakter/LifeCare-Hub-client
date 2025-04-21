@@ -19,8 +19,9 @@ const useAxiosPrivate = () => {
     },
     async (error) => {
       if (error.response?.status === 401 || error.response?.status === 403) {
+       
+         navigate("/");
         await logOut(); 
-        navigate("/");
         toast.error("You Need To Login first")
       }
       return Promise.reject(error);

@@ -13,7 +13,7 @@ export const authContext = createContext();
 const AuthProvider = ({ children }) => {
   const axiosPublic = useAxiosPublic()
     const [user,setUser] = useState(null)
-    const [loading,setLoading] = useState(false)
+    const [loading,setLoading] = useState(true)
     
   const registerUser = (email, password) => {
     setLoading(true)
@@ -53,6 +53,7 @@ const AuthProvider = ({ children }) => {
          }
          else{
           await axiosPublic.post('/logout',{},{withCredentials:true})
+          setLoading(false)
          }
         setLoading(false)
     })
@@ -61,9 +62,10 @@ const AuthProvider = ({ children }) => {
         unRegister()
     }
 
-},[])
+},[axiosPublic])
 
 const logOut = ()=>{
+  setLoading(false)
   return signOut(auth)
 }
 
