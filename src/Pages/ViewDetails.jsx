@@ -32,7 +32,8 @@ const ViewDetails = () => {
       phoneNumber,
       appointmentDate,
       gender,
-      doctorName : details?.doctorName
+      doctorName : details?.doctorName,
+      // doctorImage : details?.image
     };
 
     const res = await axios.post(

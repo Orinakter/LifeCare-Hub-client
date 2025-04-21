@@ -69,9 +69,11 @@ const Banner = () => {
             Objectively empower front-end potentialities before collaborative
             platforms.
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg">
+          <Link to="/find-doctor">
+          <button className="mt-6 px-6 py-3 bg-[#0D92F4] hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg">
             Book Appointments
           </button>
+          </Link>
         </div>
 
       
@@ -107,9 +109,11 @@ const Banner = () => {
             Objectively empower front-end potentialities before collaborative
             platforms.
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg">
+          <Link to="/find-doctor">
+          <button className="mt-6 px-6 py-3 bg-[#0D92F4] hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg">
             Book Appointments
           </button>
+          </Link>
         </div>
 
       

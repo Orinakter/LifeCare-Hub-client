@@ -19,17 +19,18 @@ const Navbar = () => {
       <NavLink to="/find-doctor">
         <li>All Doctors</li>
       </NavLink>
+      <NavLink to="/services">
+        <li>Services</li>
+      </NavLink>
       <NavLink to="/book-appointment">
         <li>Book Appointment</li>
       </NavLink>
 
-      <NavLink to="/my-appointments"> 
+      <NavLink to="/my-appointments">
         {" "}
         <li>My Appointments</li>
       </NavLink>
-      <NavLink>
-        <li>Medical Records</li>
-      </NavLink>
+
       <NavLink to="dashboard">
         {" "}
         <li>Dashboard</li>
